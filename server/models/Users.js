@@ -85,7 +85,7 @@ class Users {
       return callback(null, 'Username cannot be empty.');
     }
 
-    const socket = 0 < socketPath.trim().length;
+    const socket = socketPath != null && socketPath !== '' && 0 < socketPath.trim().length;
 
     argon2
       .hash(password)
